@@ -16,29 +16,31 @@ Follow these steps to install the VM:
 
 1. Create the VM from the image downloaded before.
 
-  1. Open VirtualBox and go to **Machine -> New**.
-  1. Give a name to the VM (any name you want).
-  1. Set the **Type** to **Linux**.
-  1. Set the **Version** to **Ubuntu (64-bit)**.
-  1. Click **Next**.
-  1. Click **Next** again (leave the memory size at the default value).
-  1. Select option **Use an existing virtual hard disk file**.
-  1. Click on the browse button on the right of the combo box. It will open up a choose dialog to choose the VM image.
-  1. Go to the directory containing the VM image and select the file with extension `.vmdk`.
-  1. Finally click **Create**. The VM is now created and should show up in VirtualBox's main window with the name you gave it.
+    1. Open VirtualBox and go to **Machine -> New**.
+    1. Give a name to the VM (any name you want).
+    1. Set the **Type** to **Linux**.
+    1. Set the **Version** to **Ubuntu (64-bit)**.
+    1. Click **Next**.
+    1. Click **Next** again (leave the memory size at the default value).
+    1. Select option **Use an existing virtual hard disk file**.
+    1. Click on the browse button on the right of the combo box. It will open up a choose dialog to choose the VM image.
+    1. Go to the directory containing the VM image and select the file with extension `.vmdk`.
+    1. Finally click **Create**. The VM is now created and should show up in VirtualBox's main window with the name you gave it.
 
 1. Enable SSH access to the newly created VM
-  1. Go to **Machine -> Settings**, while keeping the VM selected.
-  1. Under Settings go to **Network**, click on the **Advanced** toggle, and click on **Port Forwarding**.
-  1. Click on the add button to the right. It will create an entry on the forwarding table.
-  1. Fill each column as follows:
-    - **Name**: SSH
-    - **Protocol**: TCP
-    - **Host IP**: 0.0.0.0
-    - **Host Port**: 5022
-    - **Guest IP**: 0.0.0.0
-    - **Guest Port**: 22
-  1. Then click **OK**.
+    1. Go to **Machine -> Settings**, while keeping the VM selected.
+    1. Under Settings go to **Network**, click on the **Advanced** toggle, and click on **Port Forwarding**.
+    1. Click on the add button to the right. It will create an entry on the forwarding table.
+    1. Fill each column as follows:
+
+      - **Name**: SSH
+      - **Protocol**: TCP
+      - **Host IP**: 0.0.0.0
+      - **Host Port**: 5022
+      - **Guest IP**: 0.0.0.0
+      - **Guest Port**: 22
+      
+    1. Then click **OK**.
 
 1. Start the VM.
 
@@ -97,17 +99,17 @@ Directory 'ex-oscillating-loop' already includes everything setup according to t
 
 1. Copy our setup to the VM. The best way to do this, is cloning this repository on the VM and extracting the setup directory from it, using the following steps.
 
-  1. Clone this repository in the VM.
+    1. Clone this repository in the VM.
 
-          git clone https://github.com/ssbgp/bird-mininet.git
+            git clone https://github.com/ssbgp/bird-mininet.git
 
-  1. Extract the setup directory.
+    1. Extract the setup directory.
 
-          mv bird-mininet/ex-oscillating-loop ~/
+            mv bird-mininet/ex-oscillating-loop ~/
 
-  1. Remove the cloned project, since it is no longer necessary.
+    1. Remove the cloned project, since it is no longer necessary.
 
-          rm -rf bird-mininet/
+            rm -rf bird-mininet/
 
 1. Go the setup directory.
 
