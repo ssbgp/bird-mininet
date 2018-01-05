@@ -75,3 +75,46 @@ Having an SSH connection to the Mininet's VM follow these steps to install BIRD 
         sudo make install
 
 BIRD should now be installed. Enter this command to check: `bird --version`. It should show you a message like this "*BIRD version 1.6.3*" if BIRD was correctly installed.
+
+## Initialize the virtual network
+
+Here we will use a simple network with a loop, illustrated below.
+
+IMAGE HERE
+
+Each node in the network is a router running a different instance of BIRD with different configurations. To illustrate the features of SS-BGP, we configured the routing policies at each node to induce permanent oscillations.
+
+|Note|
+|--|
+|*Our goal here is not to show how to use Mininet or how to configure BIRD*. To learn about how to create a virtual network in Mininet you should read sections "[Sample Workflow](http://mininet.org/sample-workflow)" and "[Walkthrough](http://mininet.org/walkthrough)" from Mininet's official documentation. To learn about how to configure and use BIRD you should read BIRD's [official documentation](http://bird.network.cz/?get_doc&f=bird.html&v=20).|
+
+Directory 'oscillation-loop' already includes everything setup according to the previous specifications. All we have to do is copy it into the VM and run mininet.
+
+1. Go to the terminal with the SSH connection to the VM.
+1. Make sure the current directory is the home directory.
+
+        cd ~
+
+1. Copy our setup to the VM. The best way to do this, is cloning this repository on the VM and extracting the setup directory from it, using the following steps.
+
+  1. Clone this repository in the VM.
+
+          git clone https://github.com/ssbgp/bird-mininet.git
+
+  1. Extract the setup directory.
+
+          mv bird-mininet/oscillation-loop ~/
+
+  1. Remove the cloned project, since it is no longer necessary.
+
+          rm -rf bird-mininet/
+
+1. Go the setup directory.
+
+          cd oscillation-loop/
+
+1. Run mininet.
+
+          sudo python init_mininet.py
+
+At this point the virtual network was created and all nodes should be running BIRD.
