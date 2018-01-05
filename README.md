@@ -31,18 +31,13 @@ Follow these steps to install the VM:
     1. Go to **Machine -> Settings**, while keeping the VM selected.
     1. Under Settings go to **Network**, click on the **Advanced** toggle, and click on **Port Forwarding**.
     1. Click on the add button to the right. It will create an entry on the forwarding table.
-    1. Fill each column as follows:
+    1. Fill each column as follows. Then click **OK**.
 
-      - **Name**: SSH
-      - **Protocol**: TCP
-      - **Host IP**: 0.0.0.0
-      - **Host Port**: 5022
-      - **Guest IP**: 0.0.0.0
-      - **Guest Port**: 22
-      
-    1. Then click **OK**.
+|Name|Protocol|Host IP|Host Port|Guest IP|Guest Port|
+|----|--------|-------|---------|--------|----------|
+|SSH |TCP     |0.0.0.0|5022     |0.0.0.0 |22        |
 
-1. Start the VM.
+1. Finally, start the VM.
 
 At this point the VM should be booting. Once the VM has booted we can access to it using any SSH client. Use the following parameters to connect to the VM.
 
